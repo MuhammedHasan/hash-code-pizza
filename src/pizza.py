@@ -19,7 +19,8 @@ class Pizza:
         if self.is_valid_part(rows, cols):
             self._parts.append((rows, cols))
         else:
-            raise ArithmeticError('invalid slice')
+            raise ArithmeticError(
+                'invalid slice rows: %s, cols: %s' % (rows, cols))
 
     def is_valid_pizza(self):
         part_sizes = sum(self.part_size(rs, cs) for rs, cs in self._parts)
