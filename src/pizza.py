@@ -39,7 +39,7 @@ class Pizza:
                     raise ValueError()
 
         return num_mus >= self._min_ingredient   \
-            and  num_tom >= self._min_ingredient \
+            and num_tom >= self._min_ingredient \
             and self._max_part_size >= self.part_size(rows, cols)
 
         return True
@@ -55,3 +55,9 @@ class Pizza:
 
     def part_size(self, rows, cols):
         return (rows[1] - rows[0] + 1) * (cols[1] - cols[0] + 1)
+
+    def heigth(self):
+        return len(self._grid)
+
+    def width(self):
+        return len(self._grid[0])
